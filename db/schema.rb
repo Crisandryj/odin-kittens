@@ -13,7 +13,7 @@
 ActiveRecord::Schema[7.0].define(version: 2022_11_04_122709) do
   create_table "kittens", force: :cascade do |t|
     t.string "name"
-    t.string "age"
+    t.integer "age"
     t.integer "cuteness"
     t.integer "softness"
     t.datetime "created_at", null: false
