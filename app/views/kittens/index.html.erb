@@ -1,8 +1,12 @@
 <%= render "flash" %>
 <% @kittens.each do |kitten| %>
-  <%= kitten.name %>
-  <%= kitten.age %>
-  <%= kitten.softness %>
-  <%= kitten.cuteness %>
-  <%= link_to "Delete", kitten, method: "destroy" %>
+<div>
+  <li><%=  "Name: #{kitten.name}" %></li>
+  <p> <%= "Age: #{kitten.age}" %></p>
+  <p><%= "Softness: #{kitten.softness}" %></p>
+  <p><%= "Cuteness: #{kitten.cuteness}" %></p>
+
+  <p><%= button_to "Delete", kitten, method: :delete %></p>
+</div>
+
 <% end %>
