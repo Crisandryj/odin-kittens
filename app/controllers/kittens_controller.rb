@@ -12,9 +12,9 @@ class KittensController < ApplicationController
     @kitten = Kitten.new(kitten_params)
       if @kitten.save
           redirect_to root_path
-          flash.now[:notice] = "Kitten was created."
+          flash[:notice] = "Kitten was created."
         else
-          flash.now[:alert] = "Kitten was not created."
+          flash[:alert] = "Kitten was not created."
       end
   end
 
@@ -43,7 +43,8 @@ class KittensController < ApplicationController
   private
 
   def kitten_params
-    params.require(:name).permit(:age,:cuteness,:softness)
+    params.require(:kitten).permit(:name,:age,:cuteness,:softness)
   end
+
 
 end
