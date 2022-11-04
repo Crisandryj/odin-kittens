@@ -1,7 +1,7 @@
 class KittensController < ApplicationController
 
   def index
-    Kitten.all
+    @kittens = Kitten.all
   end
 
   def new
@@ -27,10 +27,10 @@ class KittensController < ApplicationController
     if @kitten.update(kitten_params)
     flash[:notice] = "Kitten was updated successfully"
     redirect_to @kitten
-  else
-  render 'edit'
+      else
+      render 'edit'
+    end
   end
-
 
   def destroy
     @kitten.destroy
